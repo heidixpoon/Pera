@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
 	validates_confirmation_of :password
 
-	has_many :monthly_lists
+	has_many :lists
+  has_many :transactions
 
 end
