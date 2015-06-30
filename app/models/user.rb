@@ -1,10 +1,10 @@
 class User < ActiveRecord::Base
+  authenticates_with_sorcery!
 
-	authenticates_with_sorcery!
+  validates :password, length: { minimum: 5 }
+  validates :password, confirmation: true
+  validates :email, uniqueness: true, email_format: { message: 'has invalid format' }
 
-	validates_confirmation_of :password
-
-	has_many :lists
-  has_many :transactions
+  has_many :lists
 
 end

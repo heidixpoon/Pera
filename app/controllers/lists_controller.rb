@@ -1,7 +1,6 @@
 class ListsController < ApplicationController
 
 	def index
-
 	end
 
 	def create
@@ -32,4 +31,5 @@ class ListsController < ApplicationController
 	def drink_params
 		params.require(:drink).permit(:name)
 	end
+
 end
