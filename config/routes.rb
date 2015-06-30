@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "lists#index"
+  root "users#index"
 
 
   resources :sessions, only: [:new, :create, :destroy]
@@ -13,5 +13,6 @@ Rails.application.routes.draw do
 
 
   resources :lists
+  resources :users
 
 end
