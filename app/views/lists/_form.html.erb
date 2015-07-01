@@ -1,4 +1,4 @@
-<%= form_for(@list) do |f| %>
+<!-- <%= form_for(@list) do |f| %>
   <% if @list.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
@@ -15,9 +15,25 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  
+
   <div class="actions">
     <%= f.submit %>
   </div>
 
-<% end %>
+<% end %> -->
+
+
+<form class="new_list" id="new_list" action="/lists" accept-charset="UTF-8" method="post">
+
+  <div class="field">
+    <label for="list_name">Name:</label><br>
+    <input type="text" name="list[name]" id="list_name">
+  </div>
+
+
+  <div class="actions">
+    <input type="submit" name="commit" value="Create List">
+  </div>
+</form>
+
+<ul id= "results"> </ul>

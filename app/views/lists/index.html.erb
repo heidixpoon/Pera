@@ -3,16 +3,14 @@
 <%= render 'form' %>
 
 
-<tbody>
-    <% @lists.each do |list| %>
-      <tr>
-        <td><%= list.name %></td>
-        <td><%= link_to 'Show',list %></td>
-        <td><%= link_to 'Edit', edit_list_path(list) %></td>
-        <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<ul>
+    <% @lists.each do |list, transaction| %>
+        <li><%= list.name %>
+        <%= link_to 'Show', list %>
+        <%= link_to 'Edit', edit_list_path(list) %>
+        <%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></li>
     <% end %>
-</tbody>
+</ul>
 
 
 <%= link_to 'Add a list', new_list_path %>
