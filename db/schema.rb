@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150630221003) do
+ActiveRecord::Schema.define(version: 20150701155550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 20150630221003) do
   create_table "transactions", force: :cascade do |t|
     t.string  "item"
     t.decimal "amount"
-    t.integer "user_id"
+    t.integer "list_id"
   end
 
-  add_index "transactions", ["user_id"], name: "index_transactions_on_user_id", using: :btree
+  add_index "transactions", ["list_id"], name: "index_transactions_on_list_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",            null: false
@@ -47,5 +47,5 @@ ActiveRecord::Schema.define(version: 20150630221003) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
   add_foreign_key "lists", "users"
-  add_foreign_key "transactions", "users"
+  add_foreign_key "transactions", "lists"
 end
