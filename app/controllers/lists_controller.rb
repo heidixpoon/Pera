@@ -1,5 +1,7 @@
 class ListsController < ApplicationController
-	before_action :require_login, :only => :create
+	# before_action :require_login :only => :create, :show, :edit, :destroy
+	before_action :set_list, only: [:show, :edit, :update, :destroy]
+
 
 	def index
 		@lists = List.all
@@ -23,7 +25,12 @@ class ListsController < ApplicationController
 	end
 
 	def show
-		@list = @user.lists.find(params[:id])
+		@list = current_user.lists.find(params[:id])
+		@lists = List.all
+
+		# @transactions = current_user.transactions.where("list_id=?", params[:id])
+
+		# render :json => @list
 	end
 
 	def edit
@@ -33,10 +40,20 @@ class ListsController < ApplicationController
 
 	def destroy
 		@list.destroy
-		redirect_to root_url
+		respond_to do |format|
+      format.html { redirect_to lists_url, notice: 'List was successfully destroyed.' }
+      format.json { head :no_content }
+		end
+		# redirect_to root_url
 	end
 
 	private
+
+	def set_list
+		@list = List.find(params[:id])
+	end
+
+	# strong params
 	def list_params
 		params.require(:list).permit(:name)
 	end
