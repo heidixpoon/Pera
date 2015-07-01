@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+	before_action :require_login, :only => :create
 
 	def index
 		@lists = List.all
@@ -22,7 +23,7 @@ class ListsController < ApplicationController
 	end
 
 	def show
-		@list = @user.drinks.find(params[:id])
+		@list = @user.lists.find(params[:id])
 	end
 
 	def edit
@@ -36,8 +37,8 @@ class ListsController < ApplicationController
 	end
 
 	private
-	def drink_params
-		params.require(:drink).permit(:name)
+	def list_params
+		params.require(:list).permit(:name)
 	end
 
 end
