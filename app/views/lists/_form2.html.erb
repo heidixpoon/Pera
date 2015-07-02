@@ -1,0 +1,26 @@
+
+<form class="new_list" id="new_list" action="/lists" accept-charset="UTF-8" method="post">
+
+  <div class="field">
+    <label for="item_name">Item name:</label><br>
+    <input type="text" name="item[name]" id="item_name">
+  </div>
+
+  <div class="field">
+    <label for="amount_name">Amount:</label><br>
+    <input type="text" name="amount[name]" id="amount_name">
+  </div>
+
+  <div class="field">
+    <label class="radio-inline"><input type="radio" name="optradio">Debit</label>
+    <label class="radio-inline"><input type="radio" name="optradio">Credit</label>
+  </div>
+
+  <br><br>
+
+  <div class="actions">
+    <input type="submit" name="commit" value="Create Transaction">
+  </div>
+</form>
+
+<ul id= "results"> </ul>
