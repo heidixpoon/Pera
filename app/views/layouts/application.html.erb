@@ -2,21 +2,29 @@
 <html>
 <head>
   <title>Pera</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Martel+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-
-  <% if current_user %>Logged in as <%= current_user.email %>.
+<div class = "constant">
+  <% if current_user %>Welcome back, <%= current_user.email %>.
           <%= link_to "Log out", log_out_path %>
           	<% else %>
           <%= link_to "Sign up", sign_up_path %> or
     		<%= link_to "log in", log_in_path %>.
   		<% end %>
-
-
+</div>
 
 
 

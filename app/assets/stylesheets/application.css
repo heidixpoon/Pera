@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+
+body{
+  background-image: url("https://farm9.staticflickr.com/8737/17233532698_38c265dafb_h.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.constant{
+  font-size: 1.2em;
+  font-family: 'Martel Sans', sans-serif;
+}

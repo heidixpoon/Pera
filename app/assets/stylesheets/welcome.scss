@@ -1,0 +1,23 @@
+
+
+.welcome{
+  height: 8em;
+  padding-top: 4em;
+  opacity: 0.3;
+  background: black;
+  border-top: 3px solid #ccc;
+  border-bottom: 3px solid #ccc;
+  margin-top: 23.0em;
+}
+
+.ontop{
+  position: relative;
+  top: 11em;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  font-family: 'Megrim', cursive;
+  width: 60%;
+  margin: 0 auto;
+
+}

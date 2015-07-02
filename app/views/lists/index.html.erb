@@ -1,16 +1,26 @@
-<h1>Hi!You are in private user page</h1>
-
-<%= render 'form' %>
 
 
-<ul>
-    <% @lists.each do |list, transaction| %>
-        <li><%= list.name %>
-        <%= link_to 'Show', list %>
-        <%= link_to 'Edit', edit_list_path(list) %>
-        <%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-    <% end %>
-</ul>
+
+<div class="usercontent">
+    <h1>Check out your monthly budget lists!</h1>
 
 
-<%= link_to 'Add a list', new_list_path %>
+    <%= render 'form' %>
+
+
+    <ul>
+        <% @lists.each do |list, transaction| %>
+            <li><%= list.name %>
+            <%= link_to 'Show', list %>
+            <%= link_to 'Edit', edit_list_path(list) %>
+            <%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <% end %>
+    </ul>
+
+
+    <%= link_to 'Add a list', new_list_path %>
+
+</div>
+
+
+<div class="userpage"></div>
