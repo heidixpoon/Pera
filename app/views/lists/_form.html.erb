@@ -26,14 +26,15 @@
 <form class="new_list" id="new_list" action="/lists" accept-charset="UTF-8" method="post">
 
   <div class="field">
-    <label for="list_name">Name:</label><br>
-    <input type="text" name="list[name]" id="list_name">
+    <input type="text" name="list[name]" id="list_name" value="List Name">
   </div>
 
 
-  <div class="actions">
+  <div class="field">
     <input type="submit" name="commit" value="Create List">
   </div>
 </form>
 
-<ul id= "results"> </ul>
+<br>
+
+<ul class="color" id= "results"></ul>

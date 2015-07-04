@@ -2,13 +2,13 @@
 
 
 <div class="usercontent">
-    <h1>Check out your monthly budget lists!</h1>
+    <h1 class ="color">Check out your monthly budget lists!</h1>
 
 
     <%= render 'form' %>
 
 
-    <ul>
+    <ul class="color" id="size">
         <% @lists.each do |list, transaction| %>
             <li><%= list.name %>
             <%= link_to 'Show', list %>
