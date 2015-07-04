@@ -1,8 +1,30 @@
-<h1>
-    <%= @list.name %>
-</h1>
 
-<%= render 'form2' %>
+<div class="usercontent1">
+  <h1 class="color">
+      <%= @list.name %>
+  </h1>
+
+  <%= render 'form2' %>
+
+  <br><br>
+  <ul>
+    <li class="transaction_list"> Monthly income    +5000 </li>
+    <li class="transaction_list"> Rent              -1000 </li>
+    <li class="transaction_list"> Electric bill     -50  </li>
+  </ul>
+
+  <br>
+
+  <%= link_to 'Back', lists_path, class:'back' %>
+
+</div>
+
+
+
+
+<div class="userpage1"></div>
+
+
 
 
 <!-- <button><%= link_to 'Add a transaction', new_transaction_path %></button> -->

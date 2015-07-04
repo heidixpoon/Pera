@@ -1,19 +1,49 @@
 .userpage {
-  height: 30em;
+  height: 35em;
   padding-top: 1em;
   opacity: 0.4;
   background: black;
   border-top: 3px solid #ccc;
   border-bottom: 3px solid #ccc;
-  margin-top: -21.0em;
+  margin-top: -22.0em;
 }
 
 
 .usercontent {
   position: relative;
-  color: white;
   z-index: 2;
   margin-top: 4em;
-  color: white;
   font-family: 'Martel Sans', sans-serif;
+  text-align: center;
 }
+
+
+.back{
+  color:white;
+
+}
+
+.color{
+  color: white;
+  list-style-type: none;
+
+}
+
+#size{
+  font-size: 1.2em;
+}
+
+
+.transaction_list{
+  color: white;
+  font-size: 1.3em;
+  list-style-type: none;
+}
+
+
+// .box{
+//   width: 30px;
+//   padding: 5px;
+//   border: 5px white;
+//   margin: 5px;
+// }

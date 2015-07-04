@@ -1,17 +1,23 @@
 
-<form class="new_list" id="new_list" action="/lists" accept-charset="UTF-8" method="post">
+<form class="new_transaction" id="new_transaction" action="/lists" accept-charset="UTF-8" method="post">
+
+  <br>
 
   <div class="field">
-    <label for="item_name">Item name:</label><br>
-    <input type="text" name="item[name]" id="item_name">
+    <!-- <label for="item_name">Item name:</label><br> -->
+    <input type="text" name="item[name]" id="item_name" value="Item Name">
   </div>
 
-  <div class="field">
-    <label for="amount_name">Amount:</label><br>
-    <input type="text" name="amount[name]" id="amount_name">
-  </div>
+  <br>
 
   <div class="field">
+    <!-- <label for="amount_name">Amount:</label><br> -->
+    <input type="text" name="amount[name]" id="amount_name" value="Amount">
+  </div>
+
+  <br>
+
+  <div class="color">
     <label class="radio-inline"><input type="radio" name="optradio">Debit</label>
     <label class="radio-inline"><input type="radio" name="optradio">Credit</label>
   </div>
@@ -23,4 +29,4 @@
   </div>
 </form>
 
-<ul id= "results"> </ul>
+<ul id= "results2"> </ul>
