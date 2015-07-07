@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "users#index"
 
 
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: [:new, :create, :edit, :destroy]
   get '/log_in', to: 'sessions#new', as: :log_in
   get '/log_out', to: 'sessions#destroy', as: :log_out
 

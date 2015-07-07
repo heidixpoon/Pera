@@ -3,7 +3,7 @@ class TransactionsController < ApplicationController
 
 	def index
 		@transactions = List.all
-		@Transaction = current_user.transactions.build
+		# @Transaction = current_user.transactions.build
 
 	end
 
@@ -12,8 +12,9 @@ class TransactionsController < ApplicationController
 
 	end
 
+
 	def create
-		@transaction = current_user.transactions.build(list_params)
+		@transaction = current_user.transactions.build(transaction_params)
 
 		if	@transaction.save
 			render :json => @transaction
@@ -21,6 +22,7 @@ class TransactionsController < ApplicationController
 			render :json => { :errors => @transaction.errors.full_messages}, :status => 422
 		end
 	end
+
 
 	def show
 		@transaction = @user.transactions.find(params[:id])
@@ -37,6 +39,11 @@ class TransactionsController < ApplicationController
 	end
 
 	private
+
+  def set_transaction
+		@transaction = Transaction.find(params[:id])
+	end
+
 	def transaction_params
 		params.require(:transaction).permit(:item, :amount)
 	end
