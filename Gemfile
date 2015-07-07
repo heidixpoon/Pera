@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
 
+
+gem 'js-routes'
+
 # Install sorcery
 gem 'sorcery'
 

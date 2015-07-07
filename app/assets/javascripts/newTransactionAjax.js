@@ -16,7 +16,7 @@ $(function(){
 
 		$.ajax({
 			type: "post",
-			url: "/lists/" + list_id,
+			url: "/lists/2",
 			dataType: "JSON",
 			data: {
 				transaction: {
@@ -32,8 +32,7 @@ $(function(){
         //  <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/lists/1">Destroy</a>
         // </li>
 
-
-        var html = "<li>" + item_name;
+        var html = "<li>" + item_name + "</li>";
         $("#results2").prepend(html);
 
 				// var html = "<li>" +list_name + "<a href='/lists/"+data.id+"'>Show</a></li>";

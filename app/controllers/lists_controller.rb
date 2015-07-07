@@ -3,10 +3,9 @@ class ListsController < ApplicationController
 	before_action :set_list, only: [:show, :edit, :update, :destroy]
 
 
+
 	def index
 		@lists = List.all
-		@list = current_user.lists.build
-
 	end
 
 	def new
@@ -33,9 +32,16 @@ class ListsController < ApplicationController
 		# render :json => @list
 	end
 
-	def edit
-		@list.update
-		redirect_to root_url
+	def update
+		respond_to do |format|
+      if @list.update(list_params)
+        format.html { redirect_to @list, notice: 'Restaurant was successfully updated.' }
+        format.json { render :show, status: :ok, location: @list }
+      else
+        format.html { render :edit }
+        format.json { render json: @list.errors, status: :unprocessable_entity }
+      end
+    end
 	end
 
 	def destroy
@@ -53,7 +59,6 @@ class ListsController < ApplicationController
 		@list = List.find(params[:id])
 	end
 
-	# strong params
 	def list_params
 		params.require(:list).permit(:name)
 	end

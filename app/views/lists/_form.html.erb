@@ -1,37 +1,15 @@
-<!-- <%= form_for(@list) do |f| %>
-  <% if @list.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
 
-      <ul>
-      <% @list.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-<% end %> -->
 
 
 <form class="new_list" id="new_list" action="/lists" accept-charset="UTF-8" method="post">
 
   <div class="field">
-    <input type="text" name="list[name]" id="list_name" value="List Name">
+    <input type="text" name="list[name]" id="list_name" placeholder="List Name">
   </div>
 
 
   <div class="field">
-    <input type="submit" name="commit" value="Create List">
+    <input type="submit" name="commit" value="Submit List Name">
   </div>
 </form>
 
