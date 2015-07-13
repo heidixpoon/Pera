@@ -1,5 +1,9 @@
+require 'pry'
+
 class TransactionsController < ApplicationController
-  before_action :require_login, :only => :create
+  # before_action :require_login, :only => :create
+  before_action :set_transaction, only: [:show, :edit, :update, :destroy]
+
 
 	def index
 		@transactions = List.all
@@ -13,15 +17,32 @@ class TransactionsController < ApplicationController
 	end
 
 
-	def create
-		@transaction = current_user.transactions.build(transaction_params)
+  def create
+    @transaction = Transaction.new(transaction_params)
+    # todo_params = it is a method = represents data submitted
+    if @transaction.save
+      respond_to do |format|
+        format.html { redirect_to @transaction, :notice => "Transaction created!" }
+        format.json { render :json => @transaction }
+      end
+    else
+      respond_to do |format|
+        format.html { render :new }
+        format.json { render :status => 400, :json => nil }
+      end
+    end
+  end
 
-		if	@transaction.save
-			render :json => @transaction
-		else
-			render :json => { :errors => @transaction.errors.full_messages}, :status => 422
-		end
-	end
+
+	# def create
+	# 	@transaction = current_user.transactions.build(transaction_params)
+  #
+	# 	if	@transaction.save
+	# 		render :json => @transaction
+	# 	else
+	# 		render :json => { :errors => @transaction.errors.full_messages}, :status => 422
+	# 	end
+	# end
 
 
 	def show
@@ -45,7 +66,7 @@ class TransactionsController < ApplicationController
 	end
 
 	def transaction_params
-		params.require(:transaction).permit(:item, :amount)
+		params.require(:transaction).permit(:item, :amount, :list_id)
 	end
 
 end

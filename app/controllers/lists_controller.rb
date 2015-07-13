@@ -26,6 +26,7 @@ class ListsController < ApplicationController
 	def show
 		@list = current_user.lists.find(params[:id])
 		@lists = List.all
+		@transactions = Transaction.all
 
 		# @transactions = current_user.transactions.where("list_id=?", params[:id])
 
@@ -49,6 +50,12 @@ class ListsController < ApplicationController
 		respond_to do |format|
       format.html { redirect_to lists_url, notice: 'List was successfully destroyed.' }
       format.json { head :no_content }
+		end
+
+		@transaction.destroy
+		respond_to do |format|
+			format.html { redirect_to list_url, notice: 'List was successfully destroyed.' }
+			format.json { head :no_content }
 		end
 		# redirect_to root_url
 	end
