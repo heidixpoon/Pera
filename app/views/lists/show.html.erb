@@ -7,12 +7,14 @@
   <%= render 'form2' %>
 
   <br><br>
-  <ul>
-    <li class="transaction_list"> Monthly income    +5000 </li>
-    <li class="transaction_list"> Rent              -1000 </li>
-    <li class="transaction_list"> Electric bill     -50  </li>
-  </ul>
 
+  <ul class="color" id="size">
+      <% @transactions.each do |transaction| %>
+          <li><%= transaction.item %>     <%= transaction.amount %>
+          <%= link_to 'Edit', edit_transaction_path(transaction) %>
+          <%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <% end %>
+  </ul>
   <br>
 
   <%= link_to 'Back', lists_path, class:'back' %>
