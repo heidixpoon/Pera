@@ -10,10 +10,12 @@
 
   <ul class="color" id="size">
       <% @transactions.each do |transaction| %>
+      <!-- yield to block -->
           <li><%= transaction.item %>     <%= transaction.amount %>
           <%= link_to 'Edit', edit_transaction_path(transaction) %>
           <%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></li>
       <% end %>
+
   </ul>
   <br>
 
@@ -24,7 +26,7 @@
 
 
 
-<div class="userpage1"></div>
+<!-- <div class="userpage1"></div> -->
 
 
 

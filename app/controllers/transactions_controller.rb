@@ -18,6 +18,8 @@ class TransactionsController < ApplicationController
 
 
   def create
+    logger.debug "test" + session[:_csrf_token]
+
     @transaction = Transaction.new(transaction_params)
     # todo_params = it is a method = represents data submitted
     if @transaction.save
