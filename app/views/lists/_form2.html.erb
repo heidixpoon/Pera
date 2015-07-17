@@ -33,4 +33,24 @@
   </div>
 </form>
 
+<script>
+
+// $("body").on("click", "#new_transaction", function(){
+//   alert("test");
+// });
+
+$("body").on("submit", "#new_transaction",function(event){
+  event.preventDefault();
+
+  var item_name = $("#item_name").val();
+  var amount_name = $("#amount_name").val();
+  var list_id = $("#list_id").val();
+
+
+  transactionCreation(item_name, amount_name, list_id);
+
+});
+
+</script>
+
 <ul id= "results2"> </ul>
