@@ -30,13 +30,10 @@ $(function(){
         // </li>
 
 
-        var html = "<li><a href='/lists/" + data.id + "'>" + list_name + "</a>";
+        var html = "<li>New List: <a href='/lists/" + data.id + "'>" + list_name + "</a>";
         $("#results").prepend(html);
-
-				// var html = "<li>" +list_name + "<a href='/lists/"+data.id+"'>Show</a></li>";
-				// $("#results").prepend(html);
-
 			},
+
 			error: function(jqXHR, textStatus, errorThrown){
 				alert("ERROR");
 			}
