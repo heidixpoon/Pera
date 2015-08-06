@@ -1,11 +1,11 @@
 class ListsController < ApplicationController
-	# before_action :require_login :only => :create, :show, :edit, :destroy
+	# before_action :require_login :only => :index, :create, :show, :edit, :destroy
 	before_action :set_list, only: [:show, :edit, :update, :destroy]
 
 
 
 	def index
-		@lists = List.all
+		@lists = current_user.lists.all
 	end
 
 	def new
